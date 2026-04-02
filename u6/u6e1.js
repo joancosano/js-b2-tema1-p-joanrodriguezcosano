@@ -9,9 +9,9 @@ import {sayHi,sayBye,GREET_TYPES} from "./modules/greeting.js";
 
 function doGreet(name,type){
 
-    if(type === GREET_TYPES.HI){
+    if (type === GREET_TYPES.HI) {
         return sayHi(name);
-    }else{
+    } else {
         return sayBye(name);
     }
 }
