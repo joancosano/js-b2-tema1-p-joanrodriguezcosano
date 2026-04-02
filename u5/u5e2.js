@@ -4,6 +4,136 @@
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+function numberArray(max){
+
+    let _list;
+    const _max = max;
+    const ERROR_1 = "ERROR_1";
+    const ERROR_2 = "ERROR_2";
+    const ERROR_3 = "ERROR_3";
+    
+
+    function init (array){
+
+        if (_list !== undefined) {
+            return ERROR_1;
+        }
+
+        if (array.length > _max) {
+            return ERROR_2;
+        }
+
+        if (!array.every(item => typeof item === "number")){
+            return ERROR_3;
+        }
+
+        _list = [...array]
+        return true
+    }
+
+    function initialized(){
+       return _list !== undefined;
+    }
+
+    function _checkItems(array){
+
+        return array.every(item => typeof item === "number")
+    }
+
+    function _addItem(number){
+
+        if ((_list.length) >= _max){
+            return false
+        }
+        
+        _list.push(number) 
+        return true
+    }
+
+    function _removeItem(number){
+
+        for (let i = 0; i < _list.length; i++) {
+
+            if ( _list[i] === number ){
+                 _list.splice(i, 1);
+                 break;
+            }
+        }
+
+        return true
+
+    }
+
+    function length (){
+
+       return  _list !== undefined ? _list.length : undefined
+
+    }
+
+    function getList(){
+        return _list ? [..._list] : undefined;
+    }
+
+    function add(items){
+
+        if (_list === undefined){
+            return ERROR_1
+        }
+        
+        if (!Array.isArray(items)){
+            items = [items];
+        }
+        
+        if (!_checkItems(items)){
+            return ERROR_3
+        }
+        
+        for (let item of items){
+            
+            let anadido = _addItem(item);
+            
+            if (!anadido){
+            return false
+        }
+    }
+    return true
+}
+
+
+function remove(items){
+    
+    if (_list === undefined){
+        return ERROR_1
+    }
+
+    if (!Array.isArray(items)){
+            items = [items];
+        }
+    
+    if (!_checkItems(items)){
+            return ERROR_3;
+    }
+
+   for (let item of items){
+    _removeItem(item);
+}
+    
+
+    return true
+
+}
+
+
+return {
+    init,
+    items:getList,
+    initialized,
+    length,
+    add,
+    remove,
+}
+
+}
 
 
 /**

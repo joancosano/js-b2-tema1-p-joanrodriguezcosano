@@ -4,6 +4,18 @@
 
 // Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+function conditionalCallback(callback,param){
+    
+    if (!param){
+        return false
+    }
+
+    callback(param)
+    return true
+
+}
+
+
 
 /**
 * TEST

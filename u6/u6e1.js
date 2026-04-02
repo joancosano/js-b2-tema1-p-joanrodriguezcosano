@@ -5,6 +5,21 @@
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
 
+import {sayHi} from "./modules/greeting.js";
+import {sayBye} from "./modules/greeting.js";
+import {GREET_TYPES} from "./modules/greeting.js";
+
+
+function doGreet(name,type){
+
+    if(type === GREET_TYPES.HI){
+        return sayHi(name);
+    }else{
+        return sayBye(name);
+    }
+}
+
+
 
 /**
 * TEST

@@ -4,6 +4,23 @@
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+const converter = (function(){
+
+    function generate(text){
+
+    if (typeof text !== "string") return false
+   
+    return text.toLowerCase()
+    .replace(/[aá]/g, '1')
+    .replace(/[eé]/g, '2')
+    .replace(/[ií]/g, '3')
+    .replace(/[oó]/g, '4')
+    .replace(/[uúü]/g, '5');
+}
+return generate;
+})();
+
+
 
 
 /**
