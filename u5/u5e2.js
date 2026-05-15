@@ -4,10 +4,10 @@
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
-function numberArray(max){
+function numberArray(maxLength){
 
     let _list;
-    const _max = max;
+    const _max = maxLength;
     const ERROR_1 = "ERROR_1";
     const ERROR_2 = "ERROR_2";
     const ERROR_3 = "ERROR_3";
